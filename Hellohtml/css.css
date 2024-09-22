@@ -1,154 +1,392 @@
+/* Global Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.logo {
-  width: 80px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  margin-right: 50px;
-}
-
-nav ul li {
-  margin-left: 90px; /* Увеличено расстояние между кнопками */
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  padding: 10px 20px;
-  background: linear-gradient(45deg, #FF4500, #FFD700);
-  border-radius: 6px;
-  transition: background0.3s ease, transform 0.3s ease;
-}
-
-nav ul li a:hover {
-  background: linear-gradient(45deg, #FF6347, #FFE135);
-  transform: scale(1.05);
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  flex-grow: 1;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.content {
-  max-width: 55%;
-}
-
-.content h1 {
-  font-size: 60px;
-  font-weight: 100;
-  margin-top: 24px;
-  margin-bottom: 20px;
-  color: #232d60;
-}
-
-.content p {
-  font-size: 25px;
-  color: #6a7199;
-}
-
-.btn {
-  display: inline-block;
-  background: linear-gradient(45deg, #FF4500, #FFD700);
-  border-radius: 6px;
-  padding: 15px 30px;
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease, background0.3s ease;
-}
-
-.btn:hover {
-  background: linear-gradient(45deg, #FF6347, #FFE135);
-  transform: scale(1.05);
-}
-
-.arrow-icons {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.arrow-icons img {
-  width: 60px;
-  margin-right: 20px;
-  background: linear-gradient(45deg, #f1490c, #FFD700);
-  border-radius: 50%;
-  padding: 10px;
-  transform: rotate(0deg);
-}
-
-.arrow-icons .next-arrow {
-  transform: rotate(180deg);
-}
-
-.feature-img {
-  width: 70%;
-  object-fit: contain;
-}
-
-.social-links {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.social-links a {
-  color: #232d60;
-  text-decoration: none;
-  margin-right: 15px;
-  font-size: 14px;
-}
-.social-links {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.social-links a {
-  color: #232d60; /* Исходный цвет */
-  text-decoration: none;
-  margin-right: 15px;
-  font-size: 14px;
-  padding: 10px 15px;
-  border-radius: 6px;
-  background: #f5f7fa; /* Нежный фон для ссылок */
-  transition: background0.3s ease, transform 0.3s ease, color 0.3s ease;
-}
-
-.social-links a:hover {
-  background: linear-gradient(45deg, #FF4500, #FFD700); /* Градиент при наведении */
-  color: white; /* Меняем цвет текста на белый */
-  transform: scale(1.05); /* Увеличиваем немного при наведении */
-}
+    margin: 0; /* Removes default margin from all elements */
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Ensures padding and border are included in total width/height */
+ }
+ 
+ /* Body Styles */
+ body {
+    font-family: Arial, sans-serif; /* Sets the default font */
+    min-height: 100vh; /* Ensures the body takes the full height of the viewport */
+    display: flex; /* Uses flexbox layout */
+    flex-direction: column; /* Arranges children in a vertical column */
+    justify-content: space-between; /* Evenly spaces out children */
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2); /* Sets a gradient background */
+    background-size: cover; /* Ensures background covers the entire area */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+ }
+ 
+ /* Navbar Styles */
+ .navbar {
+    display: flex; /* Uses flexbox for layout */
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Spaces out items */
+    padding: 20px; /* Adds padding around the navbar */
+ }
+ 
+ /* Logo and Title Styles */
+ .logo-title {
+    display: flex; /* Uses flexbox for logo and title layout */
+    align-items: center; /* Centers items vertically */
+ }
+ .logo {
+    width: 60px; /* Sets a specific width for the logo */
+ }
+ .site-title {
+    font-size: 20px; /* Sets font size for the site title */
+    color: #232d60; /* Sets text color */
+    font-weight: 500; /* Sets font weight */
+    margin-left: 10px; /* Adds margin to the left of the title */
+    font-family: 'Verdana', sans-serif; /* Sets a specific font for the title */
+ }
+ 
+ /* Navigation Menu Styles */
+ nav ul {
+    list-style: none; /* Removes bullets from the list */
+    display: flex; /* Uses flexbox for list layout */
+    margin-right: 50px; /* Adds right margin */
+ }
+ nav ul li {
+    margin-left: 60px; /* Spaces between list items */
+ }
+ nav ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Sets link text color */
+    font-size: 20.7px; /* Sets font size for links */
+    padding: 11.5px 23px; /* Adds padding around links */
+    background: linear-gradient(45deg, #FF4500, #FFD700); /* Sets gradient background for links */
+    border-radius: 6px; /* Rounds corners of buttons */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effects */
+ }
+ nav ul li a:hover {
+    background: linear-gradient(45deg, #FF6347, #FFE135); /* Changes background on hover */
+    transform: scale(1.05); /* Slightly enlarges the link on hover */
+ }
+ 
+ /* Container Styles */
+ .container {
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; /* Spaces items evenly */
+    align-items: center; /* Centers items vertically */
+    padding: 40px; /* Adds padding around the container */
+    flex-grow: 1; /* Allows the container to grow */
+    max-width: 1400px; /* Sets maximum width for the container */
+    margin: 0 auto; /* Centers the container horizontally */
+    height: 100vh; /* Sets the height to fill the viewport */
+ }
+ 
+ /* Content Styles */
+ .content {
+    max-width: 55%; /* Limits the width of the content */
+ }
+ .video-button {
+    display: inline-block; /* Makes the button inline while allowing margin/padding */
+    text-decoration: none; /* Removes underline */
+    color: white; /* Sets text color */
+    font-size: 23px; /* Sets font size */
+    padding: 11.5px 23px; /* Adds padding */
+    background: linear-gradient(45deg, #FF4500, #FFD700); /* Sets gradient background */
+    border-radius: 6px; /* Rounds corners */
+    margin-bottom: 20px; /* Adds bottom margin */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effects */
+ }
+ .video-button:hover {
+    background: linear-gradient(45deg, #FF6347, #FFE135); /* Changes background on hover */
+    transform: scale(1.05); /* Slightly enlarges on hover */
+ }
+ 
+ /* Heading Styles */
+ .content h1 {
+    font-size: 60px; /* Sets large font size for h1 */
+    font-weight: bold; /* Makes text bold */
+    margin-top: 10px; /* Adds top margin */
+    margin-bottom: 20px; /* Adds bottom margin */
+    color: #232d60; /* Sets text color */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transitions for hover effects */
+ }
+ .content h1:hover {
+    background: linear-gradient(45deg, #FF4500, #FFD700); /* Changes background on hover */
+    -webkit-background-clip: text; /* Clips background to text */
+    -webkit-text-fill-color: transparent; /* Makes text fill transparent */
+ }
+ .content p {
+    /* Add styles for paragraph text */
+ 
+    font-size: 25px; /* Sets the font size to 25 pixels */
+    color: #6a7199; /* Sets the text color to a specific shade of grayish-blue */
+    }
+    
+    .feature-img {
+       width: 47.25%; /* Sets the width of the feature image to 47.25% of its parent container */
+    }
+    
+    .about-section {
+       display: flex; /* Uses flexbox layout for the about section */
+       justify-content: space-between; /* Spaces items evenly across the main axis */
+       align-items: center; /* Centers items vertically in the cross axis */
+       padding: 80px; /* Adds 80 pixels of padding around the section */
+       height: 100vh; /* Sets the height to fill the full viewport height */
+       background: linear-gradient(to right, #f5f7fa, #c3cfe2); /* Applies a gradient background */
+    }
+    
+    .video-frame {
+       border: 10px solid transparent; /* Sets a transparent border of 10 pixels */
+       border-radius: 12px; /* Rounds the corners of the frame with a radius of 12 pixels */
+       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Adds a shadow effect around the frame */
+       padding: 10px; /* Adds 10 pixels of padding inside the frame */
+       width: 45%; /* Sets the width of the video frame to 45% of its parent container */
+       animation: pulse 1.5s infinite; /* Applies a pulsing animation that lasts 1.5 seconds and repeats infinitely */
+       background: linear-gradient(45deg, #FF4500, #FFD700); /* Sets a diagonal gradient background */
+    }
+    
+    @keyframes pulse { /* Defines the keyframes for the pulsing animation */
+       0% {
+           transform: scale(1); /* At the start, no scaling (original size) */
+       }
+       50% {
+           transform: scale(1.05); /* At the halfway point, scales up by 5% */
+       }
+       100% {
+           transform: scale(1); /* Returns to the original size at the end */
+       }
+    }
+    
+    .video-frame iframe {
+       width: 100%; /* Sets the iframe width to 100% of its parent container */
+       height: 500px; /* Sets a fixed height of 500 pixels for the iframe */
+    }
+    
+    .social-links {
+       text-align: center; /* Centers the text of social links */
+       margin-bottom: 20px; /* Adds 20 pixels of margin below the section */
+    }
+    
+    .social-links a {
+       color: #232d60; /* Sets the text color for links */
+       text-decoration: none; /* Removes underline from links */
+       margin-right: 15px; /* Adds a right margin of 15 pixels between links */
+       font-size: 14px; /* Sets the font size for the links */
+       padding: 10px 15px; /* Adds vertical and horizontal padding to links */
+       border-radius: 6px; /* Rounds the corners of the link buttons */
+       background: #f5f7fa; /* Sets a light gray background for links */
+       transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Smooth transitions for background, scale, and color changes */
+    }
+    
+    .social-links a:hover {
+       background: linear-gradient(45deg, #FF4500, #FFD700); /* Changes background to a gradient on hover */
+       color: white; /* Changes text color to white on hover */
+       transform: scale(1.05); /* Slightly enlarges the link on hover */
+    }
+    
+    /* Styles for Arrow Icons */
+    .arrow-icons {
+       margin-top: 30px; /* Adds top margin of 30 pixels */
+       display: flex; /* Uses flexbox for layout */
+       align-items: center; /* Centers items vertically */
+    }
+    
+    .arrow-icons img {
+       width: 60px; /* Sets the width of the arrow images to 60 pixels */
+       margin-right: 20px; /* Adds right margin of 20 pixels between images */
+       background: linear-gradient(45deg, #f1490c, #FFD700); /* Applies a gradient background to the images */
+       border-radius: 50%; /* Rounds the edges of the images into circles */
+       padding: 10px; /* Adds padding around the images */
+       transform: rotate(0deg); /* Sets the initial rotation angle to 0 degrees */
+    }
+    
+    .arrow-icons .next-arrow {
+       transform: rotate(180deg); /* Rotates the next arrow image by 180 degrees */
+    }
+    
+    /* All previous CSS remains unchanged */
+    .arrow-icons {
+       margin-top: 30px; /* Adds top margin of 30 pixels */
+       display: flex; /* Uses flexbox for layout */
+       align-items: center; /* Centers items vertically */
+    }
+    
+    .arrow-icons img {
+        width: 60px; 
+        margin-right: 20px;
+        background: linear-gradient(45deg, #f1490c, #FFD700); 
+        border-radius: 50%; 
+        padding: 10px; 
+        transform: rotate(0deg); 
+       }
+       .arrow-icons .next-arrow {
+        transform: rotate(180deg); 
+    }
+    
+    .arrow-icons {
+        margin-top: 30px; /* Adds 30px of top margin */
+        display: flex; /* Uses flexbox layout for arrow icons */
+        align-items: center; /* Aligns arrow icons vertically at the center */
+    }
+    
+    .arrow-icons img {
+        width: 60px; /* Sets the size of the arrow icons */
+        margin-right: 20px; /* Adds 20px space between arrow icons */
+        background: linear-gradient(45deg, #f1490c, #FFD700); /* Applies a gradient background */
+        border-radius: 50%; /* Rounds the corners to make a circle */
+        padding: 10px; /* Adds 10px padding inside the arrow icons */
+        transform: rotate(0deg); /* Initial rotation angle of 0 degrees */
+    }
+    
+    .arrow-icons .next-arrow1 {
+        transform: rotate(180deg); /* Rotates the right arrow image by 180 degrees */
+    }
+    
+    .site-title {
+        font-size: 20px; /* Sets the font size for the site title */
+        color: #000000; /* Sets the color to black */
+        font-weight: 700; /* Sets the font weight to bold */
+        margin-left: 10px; /* Adds a left margin of 10px */
+        font-family: 'Verdana', sans-serif; /* Sets the font to Verdana, fallback to sans-serif */
+    }
+    
+    .second-page-arrows {
+        justify-content: center; /* Centers the arrows horizontally */
+        margin-top: 20px; /* Adds a 20px top margin */
+    }
+    
+    .cats-gallery {
+        display: flex; /* Uses flexbox layout for the gallery */
+        flex-direction: column; /* Arranges the elements in a column */
+        justify-content: center; /* Centers the content vertically */
+        align-items: center; /* Centers the content horizontally */
+        height: 100vh; /* Sets the height to 100% of the viewport height */
+        background: linear-gradient(to right, #f5f7fa, #c3cfe2); /* Applies a gradient background */
+        padding: 20px; /* Adds 20px padding inside the gallery */
+    }
+    
+    .cat-photo-row {
+        display: flex; /* Uses flexbox layout for photo rows */
+        justify-content: space-around; /* Spaces photos evenly within the row */
+        width: 100%; /* Sets the width to 100% of the parent container */
+        margin-bottom: 20px; /* Adds 20px margin below each row */
+    }
+    
+    .cat-photo-placeholder {
+        width: 30%; /* Sets the width of the photo placeholder */
+        height: 250px; /* Sets the height of the photo placeholder */
+        border: 2px dashed #232d60; /* Adds a 2px dashed border */
+        display: flex; /* Uses flexbox layout inside the placeholder */
+        justify-content: center; /* Centers the content horizontally */
+        align-items: center; /* Centers the content vertically */
+        color: #232d60; /* Sets the text color */
+        font-size: 18px; /* Sets the font size */
+        font-weight: bold; /* Sets the font weight to bold */
+    }
+    
+    .about-text {
+        max-width: 45%;
+        font-size: 25px;
+        color: #6a7199;
+        text-align: center;
+        margin: 0 auto; /* Центрирование */
+    }
+     .about-text p {
+        color: #232d60; /* Темно-синий цвет для обычных абзацев */
+        margin: 20px 0; /* Отступы между абзацами */
+    }
+     .about-text .question {
+        text-align: left; /* Выровнять текст по левому краю */
+        position: relative; /* Позиционирование для псевдоэлемента */
+        padding-left: 25px; /* Отступ для места под точку */
+        margin: 10px 0; /* Отступы сверху и снизу */
+        color: #6a7199; /* Цвет вопросов остается прежним */
+    }
+     .about-text .question::before {
+        content: '•'; /* Оранжевая точка */
+        position: absolute;
+        left: 0; /* Позиция точки слева */
+        color: #FF8C00; /* Цвет точки */
+        font-size: 30px; /* Размер точки */
+        line-height: 0.8; /* Уменьшение высоты строки */
+    }
+     .about-section h2 {
+        font-size: 60px;
+        color: #232d60; /* Темно-синий цвет */
+        text-align: center;
+        transition: background 0.3s ease, color 0.3s ease;
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+ 
+    
+    .arrow-icons {
+        margin-top: 30px; /* Adds top margin of 30px */
+        display: flex; /* Uses flexbox layout */
+        justify-content: center; /* Centers the arrow icons horizontally */
+    }
+    
+    .first-page-arrows {
+        margin-top: 30px; /* Adds top margin of 30px */
+        display: flex; /* Uses flexbox layout */
+        align-items: center; /* Aligns items vertically at the center */
+        justify-content: flex-start; /* Aligns items to the start horizontally */
+    }
+    
+    .about-section h2 {
+        font-size: 60px; /* Sets the font size of the heading */
+        color: #232d60; /* Sets the initial text color to dark blue */
+        text-align: center; /* Centers the text */
+        transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for background and color changes */
+        margin-bottom: 20px; /* Adds bottom margin of 20px */
+    }
+    
+    .about-section h2:hover {
+        background: linear-gradient(90deg, #f46411, #ffb20b); /* Applies gradient background on hover */
+        -webkit-background-clip: text; /* Clips the background to the text */
+        -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+        color: transparent; /* Removes the initial text color */
+    }
+    
+    .album-title {
+        font-size: 60px; /* Sets the font size */
+        color: #232d60; /* Sets the text color to dark blue */
+        text-align: center; /* Centers the text */
+        transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for background and color changes */
+        margin-bottom: 10px; /* Adds bottom margin of 10px */
+    }
+    
+    .cat-photo-placeholder {
+        width: 400px; /* Sets the width of the photo placeholder */
+        height: 300px; /* Sets the height of the photo placeholder */
+        overflow: hidden; /* Hides overflowing content */
+        margin: 15px; /* Adds margin around the photo placeholder */
+    }
+    
+    .cat-photo-placeholder img {
+        width: 100%; /* Sets the image width to fill the placeholder */
+        height: 100%; /* Sets the image height to fill the placeholder */
+        object-fit: cover; /* Scales and crops the image to cover the placeholder */
+    }
+    
+    .section-text {
+        font-size: 30px; /* Sets the font size */
+        color: #151045; /* Sets the default text color to dark blue */
+        text-align: center; /* Centers the text */
+        margin-top: 15px; /* Adds top margin of 15px */
+        margin-bottom: 130px; /* Adds bottom margin of 130px */
+        line-height: 1.5; /* Sets the line height */
+        font-weight: 700; /* Sets the font weight to bold */
+        font-family: 'Verdana', sans-serif; /* Sets the font family */
+        transition: color 0.3s; /* Smooth transition for color changes */
+    }
+    
+    .section-text:hover {
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d); /* Applies gradient background on hover */
+        -webkit-background-clip: text; /* Clips the background to the text */
+        color: transparent; /* Makes the text color transparent */
+    }
+    .centered-text {
+        font-size: 30px; /* Sets the font size */
+        color: #232d60; /* Sets the text color to dark blue */
+        text-align: center; /* Centers the text */
+        transition: background0.3s ease, color 0.3s ease; /* Smooth transition for background and color changes */
+        margin-bottom: 10px; /* Sets bottom margin */
+        font-family: 'Verdana', sans-serif; /* Sets a specific font for the title */
+    }
+    

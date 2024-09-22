@@ -1,40 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <!-- Defines the character encoding and responsive design for the webpage -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the title of the webpage -->
     <title>The Cats of NYUAD</title>
+    <!-- Links to the external CSS stylesheet -->
     <link rel="stylesheet" href="css.css">
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Navigation bar section -->
     <div class="navbar">
-      <img src="Images/logo.jpg" class="logo" alt="Logo">
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contacts</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="container">
-      <div class="content">
-        <a href="#" class="btn">Video About Cats</a>
-        <h1>Let's care about our </bar> little friends together</h1>
-        <p>Giving cats the lives they deserve.</p>
-        <div class="arrow-icons">
-          <img src="Images/back-arrow.png" alt="Back arrow">
-          <img src="Images/back-arrow.png" class="next-arrow" alt="Next arrow">
+        <!-- Container for the logo and site title -->
+        <div class="logo-title">
+            <!-- Displays the site logo image -->
+            <img src="Images/logo.jpg" class="logo" alt="Logo">
+            <!-- Displays the site title -->
+            <div class="site-title">Cats of NYUAD</div>
         </div>
-      </div>
-      <img src="Images/img.png" class="feature-img" alt="Feature image">
+        <!-- Navigation menu with links -->
+        <nav>
+            <ul>
+                <!-- Link to the Home section -->
+                <li><a href="#">Home</a></li>
+                <!-- Link to the About section -->
+                <li><a href="#about">About</a></li>
+                <!-- Link to send an email to the contact address -->
+                <li><a href="mailto:ak10464@nyu.edu">Contacts</a></li>
+            </ul>
+        </nav>
     </div>
 
-    <div class="social-links">
-      <a href="https://www.facebook.com/groups/427051737970103" target="_blank">FACEBOOK</a>
-      <a href="https://www.instagram.com/campuscatsnyuad/" target="_blank">INSTAGRAM</a>
-      <a href="mailto:your-email@example.com">GMAIL</a>
+    <!-- First section of the website -->
+    <div class="container" id="first_page">
+        <!-- Content container for the first section -->
+        <div class="content">
+            <!-- Button that links to the YouTube video about cats -->
+            <a href="https://www.youtube.com/watch?v=ZZGDjMjMHOE" target="_blank" class="video-button">Video About Cats</a>
+            <!-- Main heading of the first section -->
+            <h1>Let's care about our little friends together</h1>
+            <!-- Subheading with a brief message -->
+            <p>Giving cats the lives they deserve!</p>
+            <!-- Container for the navigation arrow icons -->
+            <div class="arrow-icons first-page-arrows">
+                <!-- Back arrow image -->
+                <img src="Images/back-arrow.png" alt="Back arrow">
+                <!-- Next arrow image with additional class for styling -->
+                <img src="Images/back-arrow.png" class="next-arrow" alt="Next arrow">
+            </div> 
+        </div>
+        <!-- Image showcasing the featured cats -->
+        <img src="Images/img.png" class="feature-img" alt="Feature image">
     </div>
-  </body>
-</html>
+
+    <!-- About section -->
+    <div class="about-section" id="about">
+        <!-- Container for the embedded YouTube video -->
+        <div class="video-frame">
+            <!-- Embedded YouTube video iframe -->
+            <iframe width="100%" height="500" src="https://www.youtube.com/embed/ZZGDjMjMHOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- Text content about the cats -->
+        <div class="about-text">
+            <!-- Heading for the About section -->
+            <h2>About Our Cats</h2>
+            <!-- Brief introduction text about the cats -->
+            <p>Learn more about the wonderful cats we care for, their stories, and how you can help!</p>
+            <!-- Questions related to the life of campus cats -->
+            <p class="question">What is the secret life of our campus cats?</p>
+            <p class="question">Where can you find them more often?</p>
+            <p class="question">What can we do to make their life on campus better?</p>
+            <!-- Information about the project authors -->
+            <p>Anastasiya and Alua are here to answer all your questions!</p>
+
+            <!-- Container for the navigation arrows in the About section -->
+            <div class="arrow-icons">
+                <!-- Link to navigate back to the first section -->
+                <a href="#first_page">
+                    <img src="Images/back-arrow.png" alt="Back arrow" class="arrow">
+                </a>
+                <!-- Link to navigate to the gallery section -->
+                <a href="#cats-gallery">
+                    <!-- Link that, when clicked, scrolls to the element with the id "cats-gallery" -->
+                    <img src="Images/back-arrow.png" alt="Next arrow" class="next-arrow">
+                    <!-- Displays an image (back arrow) which serves as a clickable element for navigation -->
+                </a>
+                </div>
+                </div>
+                </div>
+                
+                <!-- Gallery section showcasing the cats -->
+                <h2 class="album-title centered-text">The album of our small friends:</h2>
+                <!-- Heading for the gallery section, centered and styled with the "album-title" and "centered-text" classes -->
+                
+                <p class="centered-text">
+                    <!-- Paragraph providing information about volunteering opportunities, centered with the "centered-text" class -->
+                    Volunteering opportunities are currently available for students. <br>
+                    <!-- Line break for formatting the paragraph text -->
+                    Students interested in helping out and taking care of the <br> campus cats can reach out to Mayada Oudah who is <br>
+                    <!-- Additional information about who to contact for volunteering -->
+                    currently looking for volunteers for refilling feeding stations, <br>
+                    taking rotations as needed. She can be reached via Facebook.
+                    <!-- Contact information and ways to get involved -->
+                </p>
+                
+                <div class="cats-gallery" id="cats-gallery">
+                    <!-- Container for the gallery of cat images, identified by the "cats-gallery" class and "id" -->
+                    
+                    <!-- First row of cat photos -->
+                    <div class="cat-photo-row">
+                        <!-- Container for the first row of cat images -->
+                
+                        <div class="cat-photo-placeholder">
+                            <!-- Placeholder for the first cat image in the row -->
+                            <!-- Image of Cat 1 -->
+                            <img src="Images/Cat1.png" alt="Cat 1">
+                            <!-- Displays the first cat image with the alt text "Cat 1" -->
+                        </div>
+                
+                        <div class="cat-photo-placeholder">
+                            <!-- Placeholder for the second cat image in the row -->
+                            <!-- Image of Cat 2 -->
+                            <img src="Images/Cat2.png" alt="Cat 2">
+                            <!-- Displays the second cat image with the alt text "Cat 2" -->
+                        </div>
+                
+                        <div class="cat-photo-placeholder">
+                            <!-- Placeholder for the third cat image in the row -->
+                            <!-- Image of Cat 3 -->
+                            <img src="Images/Cat3.png" alt="Cat 3">
+                            <!-- Displays the third cat image with the alt text "Cat 3" -->
+                        </div>
+                    </div>
+                    
+                    <!-- Second row of cat photos -->
+                    <div class="cat-photo-row">
+                        <!-- Container for the second row of cat images -->
+                
+                        <div class="cat-photo-placeholder">
+                            <!-- Placeholder for the fourth cat image in the row -->
+                            <!-- Image of Cat 4 -->
+                            <img src="Images/Cat4.png" alt="Cat 4">
+                            <!-- Displays the fourth cat image with the alt text "Cat 4" -->
+                        </div>
+                
+                        <div class="cat-photo-placeholder">
+                            <!-- Placeholder for the fifth cat image in the row -->
+                            <!-- Image of Cat 5 -->
+                            <img src="Images/Cat5.png" alt="Cat 5">
+                            <!-- Displays the fifth cat image with the alt text "Cat 5" -->
+                        </div>
+                
+                        <div class="cat-photo-placeholder">
+                            <!-- Placeholder for the sixth cat image in the row -->
+                            <!-- Image of Cat 6 -->
+                            <img src="Images/Cat6.png" alt="Cat 6">
+                            <!-- Displays the sixth cat image with the alt text "Cat 6" -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text inviting users to connect or share photos -->
+                <div class="section-text">
+                    <!-- Container for additional text or call-to-action -->
+                
+                    Feel free to connect with us anytime to ask questions <br> or just to share your amazing photos!
+                    <!-- Encourages users to reach out with questions or photos -->
+                </div>
+                
+                <!-- Section for social media links -->
+                <div class="social-links">
+                    <!-- Container for social media links -->
+                
+                    <!-- Link to the Facebook group -->
+                    <a href="https://www.facebook.com/groups/427051737970103" target="_blank">FACEBOOK</a>
+                    <!-- Facebook link opens in a new tab -->
+                
+                    <!-- Link to the Instagram page -->
+                    <a href="https://www.instagram.com/campuscatsnyuad/" target="_blank">INSTAGRAM</a>
+                    <!-- Instagram link opens in a new tab -->
+                
+                    <!-- Link to send an email -->
+                    <a href="mailto:ak1046nyu.edu">GMAIL</a>
+                    <!-- Opens the default email client with the specified email address -->
+                </div>
+                
+                <!-- JavaScript for smooth scrolling between sections -->
+                <script>
+                    // Event listener for smooth scrolling when the next arrow is clicked
+                    document.querySelector('.next-arrow').addEventListener('click', function() {
+                        // Smoothly scrolls to the About section
+                        window.scrollTo({
+                            top: document.querySelector('.about-section').offsetTop,
+                            // Gets the vertical position of the About section
+                            behavior: 'smooth'
+                            // Scrolls to the section smoothly
+                        });
+                    });
+                </script>
+                <!-- End of JavaScript -->
+                </body>
+                </html>
+                <!-- End of the HTML document -->
+                
