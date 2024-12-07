@@ -18,7 +18,7 @@
     src: url(../fonts/outfit-regular.woff2);
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: outfit-c;
     margin: 0;
     padding: 0;
 }
@@ -57,16 +57,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-
-.wrapper .main-header .main-title span:first-child {
-    font-family: 'Cormorant Garamond', serif;
+.main-title span:first-child {
+    font-family: outfit-c;
     color: var(--color-header);
     line-height: 1;
-    font-weight: 500;
+    font-weight: 300;
     white-space: nowrap;
-    letter-spacing: 0.02em;
 }
-
 .gallery {
     display: flex;
     padding: calc(var(--index) * 8) 0;
@@ -402,17 +399,21 @@ body {
     gap: 3.5rem;
 }
 
-.wrapper .tagline .tagline__part-1 {
-    font-family: 'Cormorant Garamond', serif;
+.tagline__part-1 {
+    font-family: outfit-c;
     font-size: calc(var(--index) * 3);
     color: var(--color-header);
     line-height: 1;
-    font-weight: 500;
+    font-weight: 300;
     white-space: nowrap;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    letter-spacing: 0.02em;
+}
+
+.tagline__part-1.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .tagline__part-2 {
@@ -583,17 +584,16 @@ body {
     position: relative;
     z-index: 2;
 }
-.wrapper .portfolio .portfolio__title-main {
-    font-family: 'Cormorant Garamond', serif;
+.portfolio__title-main {
+    font-family: outfit-c;
     color: var(--color-header);
     line-height: 1;
-    font-weight: 500;
+    font-weight: 300;
     font-size: calc(var(--index) * 2.5);
     white-space: nowrap;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    letter-spacing: 0.02em;
 }
 
 .portfolio__title-main.visible {
