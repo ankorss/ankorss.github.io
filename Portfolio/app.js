@@ -152,6 +152,22 @@ if (ScrollTrigger.isTouch !== 1) {
 		taglineObserver.observe(taglineSection)
 	}
 
+	// Portfolio title animation
+	const portfolioTitleAccent = document.querySelector('.portfolio__title-accent')
+	const portfolioObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				portfolioTitleAccent.classList.add('visible')
+			}
+		})
+	}, {
+		threshold: 0.5
+	})
+
+	if (portfolioTitleAccent) {
+		portfolioObserver.observe(portfolioTitleAccent)
+	}
+
 }
 
 window.addEventListener('scroll', e => {
