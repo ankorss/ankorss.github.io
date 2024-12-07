@@ -207,88 +207,52 @@ ScrollSmoother.create({
 	content: '.content'
 })
 
-// Initialize animations when the page loads
+// Photo carousel
+const photos = [
+    'img/your-photo.jpg',
+    'img/Myphoto2.jpg',
+    'img/myphoto3.jpg'
+];
+
 document.addEventListener('DOMContentLoaded', function() {
-	// Animate title on page load
-	const title = document.querySelector('.main-title')
-	if (title) {
-		title.style.opacity = '1'
-		title.style.transform = 'translateY(0)'
-	}
+    let currentPhotoIndex = 0;
+    const photoElement = document.querySelector('.about-me__image');
+    const prevBtn = document.querySelector('.nav-btn.prev');
+    const nextBtn = document.querySelector('.nav-btn.next');
 
-	// Animate about me section when it comes into view
-	const aboutMeTitle = document.querySelector('.about-me__title')
-	const aboutMeObserver = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('visible')
-				aboutMeObserver.unobserve(entry.target)
-			}
-		})
-	}, {
-		threshold: 0.1
-	})
+    // Инициализация первого фото
+    if (photoElement) {
+        photoElement.src = photos[currentPhotoIndex];
+    }
 
-	if (aboutMeTitle) {
-		aboutMeObserver.observe(aboutMeTitle)
-	}
+    function updatePhoto() {
+        if (photoElement) {
+            photoElement.style.opacity = '0';
+            setTimeout(() => {
+                photoElement.src = photos[currentPhotoIndex];
+                photoElement.style.opacity = '1';
+            }, 200);
+        }
+    }
 
-	// Photo carousel
-	const photos = [
-		'img/Myphoto2.jpg',
-		'img/your-photo.jpg',
-		'img/Myphoto3.jpg'
-	];
+    function nextPhoto() {
+        currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+        updatePhoto();
+    }
 
-	let currentPhotoIndex = 0;
-	const photoElement = document.querySelector('.about-me__image');
-	const prevBtn = document.querySelector('.nav-btn.prev');
-	const nextBtn = document.querySelector('.nav-btn.next');
+    function prevPhoto() {
+        currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+        updatePhoto();
+    }
 
-	function updatePhoto() {
-		photoElement.src = photos[currentPhotoIndex];
-	}
+    if (prevBtn && nextBtn && photoElement) {
+        prevBtn.addEventListener('click', prevPhoto);
+        nextBtn.addEventListener('click', nextPhoto);
+        
+        // Добавляем плавный переход
+        photoElement.style.transition = 'opacity 0.2s ease-in-out';
+    }
 
-	function nextPhoto() {
-		currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-		updatePhoto();
-	}
-
-	function prevPhoto() {
-		currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-		updatePhoto();
-	}
-
-	if (prevBtn && nextBtn) {
-		prevBtn.addEventListener('click', prevPhoto);
-		nextBtn.addEventListener('click', nextPhoto);
-	}
-
-	// Carousel functionality
-	const images = document.querySelectorAll('.about-me__image');
-	const nextBtnCarousel = document.querySelector('.carousel-btn.next');
-	const prevBtnCarousel = document.querySelector('.carousel-btn.prev');
-	let currentIndex = 0;
-
-	function showImage(index) {
-		images.forEach(img => img.classList.remove('active'));
-		images[index].classList.add('active');
-	}
-
-	function nextImage() {
-		currentIndex = (currentIndex + 1) % images.length;
-		showImage(currentIndex);
-	}
-
-	function prevImage() {
-		currentIndex = (currentIndex - 1 + images.length) % images.length;
-		showImage(currentIndex);
-	}
-
-	// Add click event listeners
-	nextBtnCarousel.addEventListener('click', nextImage);
-	prevBtnCarousel.addEventListener('click', prevImage);
-
-	// Show first image
-	showImage(0);
+    // Автоматическое переключение каждые 5 секунд
+    setInterval(nextPhoto, 5000);
 });
