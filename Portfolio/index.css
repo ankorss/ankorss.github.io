@@ -1130,3 +1130,84 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        padding: calc(var(--index) * 2) 0;
+    }
+
+    .gallery > * {
+        flex: none;
+        width: 100%;
+    }
+
+    .gallery__item {
+        margin: calc(var(--index) * 1) 0;
+    }
+
+    .text-block__h {
+        font-size: calc(var(--index) * 2);
+    }
+
+    .text-block__p {
+        font-size: calc(var(--index) * 1);
+    }
+
+    .contact-message {
+        padding: 0 15px;
+    }
+
+    .contact-title {
+        font-size: calc(var(--index) * 1.8);
+    }
+
+    .contact-text {
+        font-size: calc(var(--index) * 1);
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .social-link {
+        display: block;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .hero-content__p {
+        font-size: calc(var(--index) * 1.2);
+    }
+
+    .main-header {
+        min-height: 80vh;
+    }
+}
+
+/* Дополнительные настройки для очень маленьких экранов */
+@media (max-width: 480px) {
+    .text-block__h {
+        font-size: calc(var(--index) * 1.8);
+    }
+
+    .text-block__p {
+        font-size: calc(var(--index) * 0.9);
+    }
+
+    .contact-title {
+        font-size: calc(var(--index) * 1.6);
+    }
+
+    .social-link {
+        width: 90%;
+        padding: 8px 15px;
+    }
+
+    .hero-content__p {
+        font-size: calc(var(--index) * 1);
+    }
+}
