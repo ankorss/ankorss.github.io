@@ -208,7 +208,7 @@ ScrollSmoother.create({
 })
 
 // Initialize animations when the page loads
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
 	// Animate title on page load
 	const title = document.querySelector('.main-title')
 	if (title) {
@@ -233,10 +233,41 @@ document.addEventListener('DOMContentLoaded', () => {
 		aboutMeObserver.observe(aboutMeTitle)
 	}
 
+	// Photo carousel
+	const photos = [
+		'img/Myphoto2.jpg',
+		'img/your-photo.jpg',
+		'img/Myphoto3.jpg'
+	];
+
+	let currentPhotoIndex = 0;
+	const photoElement = document.querySelector('.about-me__image');
+	const prevBtn = document.querySelector('.nav-btn.prev');
+	const nextBtn = document.querySelector('.nav-btn.next');
+
+	function updatePhoto() {
+		photoElement.src = photos[currentPhotoIndex];
+	}
+
+	function nextPhoto() {
+		currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+		updatePhoto();
+	}
+
+	function prevPhoto() {
+		currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+		updatePhoto();
+	}
+
+	if (prevBtn && nextBtn) {
+		prevBtn.addEventListener('click', prevPhoto);
+		nextBtn.addEventListener('click', nextPhoto);
+	}
+
 	// Carousel functionality
 	const images = document.querySelectorAll('.about-me__image');
-	const prevBtn = document.querySelector('.carousel-btn.prev');
-	const nextBtn = document.querySelector('.carousel-btn.next');
+	const nextBtnCarousel = document.querySelector('.carousel-btn.next');
+	const prevBtnCarousel = document.querySelector('.carousel-btn.prev');
 	let currentIndex = 0;
 
 	function showImage(index) {
@@ -255,7 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Add click event listeners
-	nextBtn.addEventListener('click', nextImage);
-	prevBtn.addEventListener('click', prevImage);
+	nextBtnCarousel.addEventListener('click', nextImage);
+	prevBtnCarousel.addEventListener('click', prevImage);
 
-})
+	// Show first image
+	showImage(0);
+});
