@@ -216,9 +216,9 @@ const photos = [
 
 document.addEventListener('DOMContentLoaded', function() {
     let currentPhotoIndex = 0;
-    const photoElement = document.querySelector('.about-me__image');
-    const prevBtn = document.querySelector('.nav-btn.prev');
-    const nextBtn = document.querySelector('.nav-btn.next');
+    const photoElement = document.querySelector('.carousel-image');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
 
     // Инициализация первого фото
     if (photoElement) {
