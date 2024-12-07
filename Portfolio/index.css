@@ -126,6 +126,7 @@ body {
     line-height: 1.75;
     font-size: calc(var(--index) * 0.75);
     color: var(--color-text);
+    margin-bottom: 20px;
 }
 .learn-more-btn {
     display: inline-block;
@@ -137,6 +138,7 @@ body {
     font-family: outfit-c;
     font-size: calc(var(--index) * 0.8);
     transition: all 0.3s ease;
+    margin-bottom: 20px;
 }
 
 .learn-more-btn:hover {
@@ -731,10 +733,54 @@ body {
 .ink-blot.visible::after {
     opacity: 1;
 }
+main {
+    margin-bottom: -150px;
+}
+
+.gallery__right {
+    margin-bottom: -150px;
+}
+
 .contact-message {
     text-align: center;
     padding: 0 20px 20px;
     margin-bottom: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+    margin-top: -100px;
+}
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: calc(var(--index) * 1.35);
+    color: rgba(255, 0, 0, 0.7);
+    line-height: 1.2;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(255, 0, 0, 0.7), transparent);
+}
+
+.contact-text {
+    font-family: 'Playfair Display', serif;
+    font-size: calc(var(--index) * 0.9);
+    color: #FFFFFF;
+    line-height: 1.4;
+    font-style: italic;
+    font-weight: normal;
 }
 .footer {
     padding: 0;
@@ -758,7 +804,7 @@ body {
 
 .social-links {
     display: flex;
-    gap: 40px;
+    gap: 60px;
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -767,100 +813,25 @@ body {
 .social-link {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 8px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    background-color: transparent;
-    letter-spacing: 0.5px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .social-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     border-color: #FFFFFF;
-}
-.ink-blot {
-    position: absolute;
-    width: calc(var(--index) * 32);
-    height: calc(var(--index) * 32);
-    background: rgba(255, 0, 0, 0.1);
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-    opacity: 0;
-    transform: scale(0.6) translateY(30px);
-    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: blur(20px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.ink-blot--top-left {
-    top: -25%;
-    left: -15%;
-    animation: floatBlot1 25s ease-in-out infinite;
-}
-
-.ink-blot--bottom-right {
-    top: 25%;
-    right: -15%;
-    animation: floatBlot2 30s ease-in-out infinite;
-}
-
-.portfolio__title-wrapper .ink-blot--top-left {
-    top: -50%;
-    left: -30%;
-    transform: scale(0.9);
-}
-
-.portfolio__title-wrapper .ink-blot--bottom-right {
-    bottom: -50%;
-    right: -30%;
-    transform: scale(0.9);
-}
-
-.ink-blot.visible {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-}
-
-.ink-blot::before {
-    content: '';
-    position: absolute;
-    inset: 5%;
-    background: radial-gradient(
-        circle at center,
-        rgba(255, 0, 0, 0.18),
-        transparent 90%
-    );
-    border-radius: 50%;
-    filter: blur(25px);
-    opacity: 0;
-    transition: opacity 2s ease;
-}
-
-.ink-blot.visible::before {
-    opacity: 1;
-}
-
-.ink-blot::after {
-    content: '';
-    position: absolute;
-    inset: 15%;
-    background: radial-gradient(
-        circle at center,
-        rgba(255, 0, 0, 0.15),
-        rgba(255, 255, 255, 0.08) 70%,
-        transparent 100%
-    );
-    border-radius: 50%;
-    filter: blur(22px);
-    mix-blend-mode: overlay;
-    opacity: 0;
-    transition: opacity 2s ease;
-}
-
-.ink-blot.visible::after {
-    opacity: 1;
-}
 .stamp-container {
     position: relative;
     width: 100%;
