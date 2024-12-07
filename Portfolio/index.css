@@ -18,7 +18,9 @@
     src: url(../fonts/outfit-regular.woff2);
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: outfit-c;
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+    padding: 0;
 }
 /* will-change */
 .content, .hero, .main-header, .gallery > * {
@@ -55,9 +57,16 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-.main-title span:first-child {
-    margin-bottom: -20px;
+
+.wrapper .main-header .main-title span:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--color-header);
+    line-height: 1;
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
 }
+
 .gallery {
     display: flex;
     padding: calc(var(--index) * 8) 0;
@@ -378,31 +387,34 @@ body {
     margin-bottom: 20vh;
     padding-top: calc(var(--index) * 5);
 }
+
 .tagline__content {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
+
 .tagline__text {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3.5rem;
 }
-.tagline__part-1 {
+
+.wrapper .tagline .tagline__part-1 {
+    font-family: 'Cormorant Garamond', serif;
     font-size: calc(var(--index) * 3);
     color: var(--color-header);
     line-height: 1;
-    font-weight: 300;
+    font-weight: 500;
     white-space: nowrap;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    letter-spacing: 0.02em;
 }
-.tagline__part-1.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+
 .tagline__part-2 {
     font-family: 'Playfair Display', serif;
     font-size: calc(var(--index) * 3.2);
@@ -414,11 +426,13 @@ body {
     transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     filter: blur(10px);
 }
+
 .tagline__part-2.visible {
     opacity: 1;
     transform: scale(1) translateY(0);
     filter: blur(0);
 }
+
 .ink-blot {
     position: absolute;
     width: calc(var(--index) * 32);
@@ -569,12 +583,22 @@ body {
     position: relative;
     z-index: 2;
 }
-.portfolio__title-main {
+.wrapper .portfolio .portfolio__title-main {
+    font-family: 'Cormorant Garamond', serif;
     color: var(--color-header);
     line-height: 1;
-    font-weight: 300;
+    font-weight: 500;
     font-size: calc(var(--index) * 2.5);
     white-space: nowrap;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    letter-spacing: 0.02em;
+}
+
+.portfolio__title-main.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .portfolio__title-accent {
@@ -585,6 +609,16 @@ body {
     font-style: italic;
     position: relative;
     padding-bottom: 10px;
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: blur(10px);
+}
+
+.portfolio__title-accent.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
 }
 
 .portfolio__title-accent::after {

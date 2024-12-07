@@ -169,23 +169,30 @@ if (ScrollTrigger.isTouch !== 1) {
 	}
 
 	// Portfolio animations
-	const portfolioSection = document.querySelector('.portfolio')
-	const portfolioBlots = portfolioSection.querySelectorAll('.ink-blot')
+	const portfolioTitleWrapper = document.querySelector('.portfolio__title-wrapper')
+	const portfolioBlots = portfolioTitleWrapper.querySelectorAll('.ink-blot')
 	const portfolioObserver2 = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				portfolioBlots.forEach(blot => {
-					blot.classList.add('visible')
-				})
-				portfolioTitleAccent.classList.add('visible')
+				setTimeout(() => {
+					const portfolioTitleMain = document.querySelector('.portfolio__title-main')
+					portfolioTitleMain.classList.add('visible')
+				}, 300)
+				
+				setTimeout(() => {
+					portfolioTitleAccent.classList.add('visible')
+					portfolioBlots.forEach(blot => {
+						blot.classList.add('visible')
+					})
+				}, 1200)
 			}
 		})
 	}, {
 		threshold: 0.5
 	})
 
-	if (portfolioSection) {
-		portfolioObserver2.observe(portfolioSection)
+	if (portfolioTitleWrapper) {
+		portfolioObserver2.observe(portfolioTitleWrapper)
 	}
 
 }
