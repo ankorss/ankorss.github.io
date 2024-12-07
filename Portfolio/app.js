@@ -208,7 +208,7 @@ ScrollSmoother.create({
 })
 
 // Карусель фотографий
-const photos = [
+const images = [
     'img/your-photo.jpg',
     'img/Myphoto2.jpg',
     'img/myphoto3.jpg'
@@ -216,8 +216,8 @@ const photos = [
 
 document.addEventListener('DOMContentLoaded', function() {
     const photoElement = document.querySelector('.about-me__image');
-    const prevBtn = document.querySelector('.nav-btn.prev');
-    const nextBtn = document.querySelector('.nav-btn.next');
+    const prevBtn = document.querySelector('.prev-gallery');
+    const nextBtn = document.querySelector('.next-gallery');
     let currentIndex = 0;
 
     // Функция для смены фотографии
@@ -226,13 +226,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         setTimeout(() => {
             if (direction === 'next') {
-                currentIndex = (currentIndex + 1) % photos.length;
+                currentIndex = (currentIndex + 1) % images.length;
             } else {
-                currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
             }
-            photoElement.src = photos[currentIndex];
+            
+            photoElement.src = images[currentIndex];
             photoElement.style.opacity = '1';
-        }, 300);
+        }, 200);
     }
 
     // Обработчики для кнопок
