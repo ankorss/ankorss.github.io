@@ -126,7 +126,6 @@ body {
     line-height: 1.75;
     font-size: calc(var(--index) * 0.75);
     color: var(--color-text);
-    margin-bottom: calc(var(--index) * 1);
 }
 .learn-more-btn {
     display: inline-block;
@@ -143,7 +142,6 @@ body {
 .learn-more-btn:hover {
     background-color: rgba(255, 0, 0, 0.9);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
 }
 .about-me {
     min-height: 100vh;
@@ -735,19 +733,8 @@ body {
 }
 .contact-message {
     text-align: center;
-    padding: 20px 20px 20px;
+    padding: 0 20px 20px;
     margin-bottom: 15px;
-}
-
-.contact-message h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: calc(var(--index) * 1.2);
-    color: #CC0000;
-    line-height: 1.4;
-    font-style: italic;
-    margin: 0;
-    text-decoration: underline;
-    font-weight: 400;
 }
 .footer {
     padding: 0;
@@ -758,13 +745,13 @@ body {
     margin-left: -50vw;
     margin-right: -50vw;
     width: 100vw;
+    background-color: #990000;
 }
 
 .footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #990000;
     padding: 30px 0;
     width: 100%;
 }
