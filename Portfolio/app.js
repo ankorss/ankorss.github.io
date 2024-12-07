@@ -122,33 +122,36 @@ if (ScrollTrigger.isTouch !== 1) {
 		})
 	})
 
-	// Анимация для первой части тэглайна
-	gsap.to('.tagline__part-1', {
-		scrollTrigger: {
-			trigger: '.tagline',
-			start: 'top center',
-			onEnter: () => document.querySelector('.tagline__part-1').classList.add('visible')
-		}
-	});
+	// Tagline animation
+	const taglinePart1 = document.querySelector('.tagline__part-1')
+	const taglinePart2 = document.querySelector('.tagline__part-2')
+	const inkBlots = document.querySelectorAll('.ink-blot')
 
-	// Анимация для второй части тэглайна и клякс
-	gsap.to('.tagline__part-2', {
-		scrollTrigger: {
-			trigger: '.tagline',
-			start: 'top center',
-			onEnter: () => {
+	const taglineObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
 				setTimeout(() => {
-					document.querySelector('.tagline__part-2').classList.add('visible');
-					// Добавляем кляксы с небольшой задержкой
-					setTimeout(() => {
-						document.querySelectorAll('.ink-blot').forEach(blot => {
-							blot.classList.add('visible');
-						});
-					}, 200);
-				}, 800)
+					taglinePart1.classList.add('visible')
+				}, 300)
+				
+				setTimeout(() => {
+					taglinePart2.classList.add('visible')
+					// Add visible class to ink blots when part 2 appears
+					inkBlots.forEach(blot => {
+						blot.classList.add('visible')
+					})
+				}, 1200)
 			}
-		}
-	});
+		})
+	}, {
+		threshold: 0.5
+	})
+
+	const taglineSection = document.querySelector('.tagline')
+	if (taglineSection) {
+		taglineObserver.observe(taglineSection)
+	}
+
 }
 
 window.addEventListener('scroll', e => {
@@ -186,4 +189,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (aboutMeTitle) {
 		aboutMeObserver.observe(aboutMeTitle)
 	}
+
+	// Carousel functionality
+	const images = document.querySelectorAll('.about-me__image');
+	const prevBtn = document.querySelector('.carousel-btn.prev');
+	const nextBtn = document.querySelector('.carousel-btn.next');
+	let currentIndex = 0;
+
+	function showImage(index) {
+		images.forEach(img => img.classList.remove('active'));
+		images[index].classList.add('active');
+	}
+
+	function nextImage() {
+		currentIndex = (currentIndex + 1) % images.length;
+		showImage(currentIndex);
+	}
+
+	function prevImage() {
+		currentIndex = (currentIndex - 1 + images.length) % images.length;
+		showImage(currentIndex);
+	}
+
+	// Add click event listeners
+	nextBtn.addEventListener('click', nextImage);
+	prevBtn.addEventListener('click', prevImage);
+
 })

@@ -275,13 +275,62 @@ body {
     height: calc(var(--index) * 19);
 }
 
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
 .about-me__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.about-me__image.active {
+    opacity: 1;
     position: relative;
-    z-index: 3;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: -6.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+    z-index: 4;
+}
+
+.carousel-btn {
+    background: rgba(255, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
 }
 
 .decorative-square {
@@ -290,6 +339,7 @@ body {
     height: 100%;
     border-radius: 8px;
     transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 2;
 }
 
 .decorative-square.red {
@@ -368,94 +418,71 @@ body {
 }
 .ink-blot {
     position: absolute;
-    width: calc(var(--index) * 35);
-    height: calc(var(--index) * 35);
-    background: rgba(255, 0, 0, 0.12);
-    border-radius: 63% 37% 32% 68% / 35% 68% 32% 65%;
+    width: calc(var(--index) * 32);
+    height: calc(var(--index) * 32);
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
     opacity: 0;
-    transform: scale(0.8);
-    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.ink-blot::before {
-    content: '';
-    position: absolute;
-    inset: 12%;
-    background: radial-gradient(
-        circle at center,
-        rgba(255, 0, 0, 0.25),
-        transparent 80%
-    );
-    border-radius: inherit;
-    filter: blur(15px);
-}
-
-.ink-blot::after {
-    content: '';
-    position: absolute;
-    inset: 18%;
-    background: linear-gradient(
-        45deg,
-        rgba(255, 0, 0, 0.2),
-        rgba(255, 255, 255, 0.1)
-    );
-    border-radius: inherit;
-    filter: blur(8px);
+    transform: scale(0.6) translateY(30px);
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: blur(20px);
 }
 
 .ink-blot.visible {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1) translateY(0);
 }
 
 .ink-blot--top-left {
     top: -25%;
     left: -15%;
-    animation: floatBlot1 18s ease-in-out infinite;
+    animation: floatBlot1 25s ease-in-out infinite;
 }
 
 .ink-blot--bottom-right {
-    bottom: -25%;
+    top: 25%;
     right: -15%;
-    animation: floatBlot2 22s ease-in-out infinite;
+    animation: floatBlot2 30s ease-in-out infinite;
 }
 
-@keyframes floatBlot1 {
-    0%, 100% {
-        transform: translate(0, 0) rotate(0deg) scale(1.1);
-        border-radius: 63% 37% 32% 68% / 35% 68% 32% 65%;
-    }
-    25% {
-        transform: translate(3%, 3%) rotate(8deg) scale(1.2);
-        border-radius: 68% 32% 25% 75% / 42% 58% 42% 58%;
-    }
-    50% {
-        transform: translate(-2%, 4%) rotate(-5deg) scale(1);
-        border-radius: 75% 25% 38% 62% / 28% 72% 28% 72%;
-    }
-    75% {
-        transform: translate(-3%, -2%) rotate(6deg) scale(1.15);
-        border-radius: 32% 68% 75% 25% / 65% 35% 65% 35%;
-    }
+.ink-blot::before {
+    content: '';
+    position: absolute;
+    inset: 5%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 0, 0, 0.18),
+        transparent 90%
+    );
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 
-@keyframes floatBlot2 {
-    0%, 100% {
-        transform: translate(0, 0) rotate(0deg) scale(1.1);
-        border-radius: 72% 28% 65% 35% / 35% 65% 35% 65%;
-    }
-    25% {
-        transform: translate(-3%, -3%) rotate(-8deg) scale(1.2);
-        border-radius: 28% 72% 35% 65% / 72% 28% 72% 28%;
-    }
-    50% {
-        transform: translate(2%, -4%) rotate(5deg) scale(1);
-        border-radius: 65% 35% 72% 28% / 35% 65% 35% 65%;
-    }
-    75% {
-        transform: translate(3%, 2%) rotate(-6deg) scale(1.15);
-        border-radius: 35% 65% 28% 72% / 65% 35% 65% 35%;
-    }
+.ink-blot.visible::before {
+    opacity: 1;
+}
+
+.ink-blot::after {
+    content: '';
+    position: absolute;
+    inset: 15%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 0, 0, 0.15),
+        rgba(255, 255, 255, 0.08) 70%,
+        transparent 100%
+    );
+    border-radius: 50%;
+    filter: blur(22px);
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.ink-blot.visible::after {
+    opacity: 1;
 }
 .stamp-container {
     position: relative;
@@ -486,13 +513,14 @@ body {
 .cv-button {
     display: inline-flex;
     align-items: center;
-    padding: 15px 30px;
+    padding: 20px 40px;
     margin-top: 20px;
     background-color: rgba(255, 0, 0, 0.7);
     color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 500;
+    font-size: 18px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
 }
@@ -503,12 +531,43 @@ body {
     box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
 }
 
-.cv-button::after {
-    content: '→';
-    margin-left: 10px;
-    transition: transform 0.3s ease;
+.cv-button__text {
+    margin-right: calc(var(--index) * 0.3);
+}
+@keyframes floatBlot1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1.2);
+        filter: blur(20px);
+    }
+    25% {
+        transform: translate(5%, 5%) rotate(10deg) scale(1.3);
+        filter: blur(23px);
+    }
+    50% {
+        transform: translate(-3%, 6%) rotate(-8deg) scale(1.1);
+        filter: blur(25px);
+    }
+    75% {
+        transform: translate(-4%, -3%) rotate(12deg) scale(1.25);
+        filter: blur(22px);
+    }
 }
 
-.cv-button:hover::after {
-    transform: translateX(5px);
+@keyframes floatBlot2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1.2);
+        filter: blur(20px);
+    }
+    25% {
+        transform: translate(-5%, -5%) rotate(-10deg) scale(1.3);
+        filter: blur(24px);
+    }
+    50% {
+        transform: translate(3%, -6%) rotate(8deg) scale(1.1);
+        filter: blur(26px);
+    }
+    75% {
+        transform: translate(4%, 3%) rotate(-12deg) scale(1.25);
+        filter: blur(22px);
+    }
 }
