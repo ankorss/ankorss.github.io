@@ -1133,58 +1133,94 @@ html, body {
 
 /* Медиа-запросы для мобильных устройств */
 @media (max-width: 768px) {
-    .gallery {
-        flex-direction: column;
-        padding: calc(var(--index) * 2) 0;
+    :root {
+        --index: calc(1vw + 1vh);
     }
 
-    .gallery > * {
-        flex: none;
-        width: 100%;
+    .wrapper {
+        padding: 0 10px;
+    }
+
+    .main-header {
+        min-height: 100vh;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .main-title {
+        font-size: calc(var(--index) * 4);
+        margin-bottom: calc(var(--index) * 2);
+    }
+
+    .gallery {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .gallery__left {
+        padding-right: 0;
+    }
+
+    .gallery__right {
+        padding-left: 0;
+        margin-bottom: 0;
     }
 
     .gallery__item {
         margin: calc(var(--index) * 1) 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .text-block {
+        padding: calc(var(--index) * 1);
+        margin: calc(var(--index) * 1) 0;
     }
 
     .text-block__h {
-        font-size: calc(var(--index) * 2);
+        font-size: calc(var(--index) * 2.5);
+        margin-bottom: calc(var(--index) * 1);
     }
 
     .text-block__p {
-        font-size: calc(var(--index) * 1);
+        font-size: calc(var(--index) * 1.2);
+        margin-bottom: calc(var(--index) * 1);
     }
 
     .contact-message {
-        padding: 0 15px;
-    }
-
-    .contact-title {
-        font-size: calc(var(--index) * 1.8);
-    }
-
-    .contact-text {
-        font-size: calc(var(--index) * 1);
+        padding: calc(var(--index) * 1);
+        margin: calc(var(--index) * 2) auto;
+        width: 90%;
     }
 
     .social-links {
         flex-direction: column;
-        gap: 20px;
+        gap: calc(var(--index) * 1);
+        padding: calc(var(--index) * 2) 0;
     }
 
     .social-link {
         display: block;
-        text-align: center;
         width: 80%;
         margin: 0 auto;
+        font-size: calc(var(--index) * 1);
     }
 
-    .hero-content__p {
-        font-size: calc(var(--index) * 1.2);
+    main {
+        margin-bottom: 0;
     }
 
-    .main-header {
-        min-height: 80vh;
+    .footer {
+        position: static;
+        margin: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .footer-content {
+        padding: calc(var(--index) * 2) 0;
     }
 }
 
