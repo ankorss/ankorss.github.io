@@ -207,7 +207,7 @@ ScrollSmoother.create({
 	content: '.content'
 })
 
-// Photo carousel
+// Карусель фотографий
 const photos = [
     'img/your-photo.jpg',
     'img/Myphoto2.jpg',
@@ -215,44 +215,32 @@ const photos = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    let currentPhotoIndex = 0;
-    const photoElement = document.querySelector('.carousel-image');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
+    const sliderImage = document.querySelector('.slider-image');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+    let currentIndex = 0;
 
-    // Инициализация первого фото
-    if (photoElement) {
-        photoElement.src = photos[currentPhotoIndex];
-    }
-
-    function updatePhoto() {
-        if (photoElement) {
-            photoElement.style.opacity = '0';
-            setTimeout(() => {
-                photoElement.src = photos[currentPhotoIndex];
-                photoElement.style.opacity = '1';
-            }, 200);
-        }
-    }
-
-    function nextPhoto() {
-        currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-        updatePhoto();
-    }
-
-    function prevPhoto() {
-        currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-        updatePhoto();
-    }
-
-    if (prevBtn && nextBtn && photoElement) {
-        prevBtn.addEventListener('click', prevPhoto);
-        nextBtn.addEventListener('click', nextPhoto);
+    // Функция для смены фотографии
+    function changeImage(direction) {
+        sliderImage.style.opacity = '0';
         
-        // Добавляем плавный переход
-        photoElement.style.transition = 'opacity 0.2s ease-in-out';
+        setTimeout(() => {
+            if (direction === 'next') {
+                currentIndex = (currentIndex + 1) % photos.length;
+            } else {
+                currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            }
+            sliderImage.src = photos[currentIndex];
+            sliderImage.style.opacity = '1';
+        }, 300);
+    }
+
+    // Обработчики для кнопок
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => changeImage('prev'));
+        nextBtn.addEventListener('click', () => changeImage('next'));
     }
 
     // Автоматическое переключение каждые 5 секунд
-    setInterval(nextPhoto, 5000);
+    setInterval(() => changeImage('next'), 5000);
 });
