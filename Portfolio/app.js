@@ -150,3 +150,40 @@ if (ScrollTrigger.isTouch !== 1) {
 		}
 	});
 }
+
+window.addEventListener('scroll', e => {
+	document.documentElement.style.setProperty('--scrollTop', `${this.scrollY}px`)
+})
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+ScrollSmoother.create({
+	wrapper: '.wrapper',
+	content: '.content'
+})
+
+// Initialize animations when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+	// Animate title on page load
+	const title = document.querySelector('.main-title')
+	if (title) {
+		title.style.opacity = '1'
+		title.style.transform = 'translateY(0)'
+	}
+
+	// Animate about me section when it comes into view
+	const aboutMeTitle = document.querySelector('.about-me__title')
+	const aboutMeObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible')
+				aboutMeObserver.unobserve(entry.target)
+			}
+		})
+	}, {
+		threshold: 0.1
+	})
+
+	if (aboutMeTitle) {
+		aboutMeObserver.observe(aboutMeTitle)
+	}
+})
