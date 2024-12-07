@@ -1247,3 +1247,83 @@ html, body {
         font-size: calc(var(--index) * 1);
     }
 }
+
+/* Стили для вертикальной ориентации */
+@media (max-width: 768px) and (orientation: portrait) {
+    :root {
+        --index: calc(1vw + 1vh);
+    }
+
+    .main-header {
+        min-height: 60vh;
+    }
+
+    .main-title {
+        font-size: calc(var(--index) * 3);
+        padding: 0 15px;
+    }
+
+    .gallery {
+        padding: 0 10px;
+    }
+
+    .gallery__item {
+        margin: calc(var(--index) * 0.5) 0;
+    }
+
+    .text-block {
+        padding: calc(var(--index) * 0.8);
+    }
+
+    .text-block__h {
+        font-size: calc(var(--index) * 2);
+        margin-bottom: calc(var(--index) * 0.8);
+    }
+
+    .text-block__p {
+        font-size: calc(var(--index) * 1);
+        line-height: 1.4;
+    }
+
+    .learn-more-btn {
+        padding: calc(var(--index) * 0.5) calc(var(--index) * 1);
+        font-size: calc(var(--index) * 0.8);
+    }
+
+    .contact-message {
+        padding: calc(var(--index) * 0.8);
+        margin: calc(var(--index) * 1.5) auto;
+    }
+
+    .contact-title {
+        font-size: calc(var(--index) * 1.8);
+    }
+
+    .contact-text {
+        font-size: calc(var(--index) * 0.9);
+    }
+
+    .social-links {
+        gap: calc(var(--index) * 0.8);
+        padding: calc(var(--index) * 1.5) 0;
+    }
+
+    .social-link {
+        width: 90%;
+        padding: calc(var(--index) * 0.5) calc(var(--index) * 1);
+        font-size: calc(var(--index) * 0.9);
+    }
+
+    img.gallery__item {
+        max-height: 50vh;
+        object-fit: cover;
+    }
+
+    .layers__caption {
+        font-size: calc(var(--index) * 2.5);
+    }
+
+    .hero-content__p {
+        font-size: calc(var(--index) * 0.9);
+    }
+}
