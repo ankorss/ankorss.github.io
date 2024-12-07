@@ -90,7 +90,7 @@ body {
 .text-block {
     color: var(--color-text);
     position: relative;
-    margin-top: calc(var(--index) * -6);
+    margin-top: calc(var(--index) * -4.5);
 }
 .text-block__h {
     font-family: 'Playfair Display', serif;
@@ -943,4 +943,10 @@ body {
     display: block;
     line-height: 1;
     font-weight: 300;
+}
+
+.project-layout,
+.project-layout .project-image,
+.project-layout .project-text-block {
+    all: unset;
 }
