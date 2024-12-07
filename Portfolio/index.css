@@ -88,8 +88,8 @@ body {
     line-height: 1.75;
 }
 .about-me {
-    padding: calc(var(--index) * 15) 0 4rem 0;  /* Increased top padding */
-    margin-top: 50vh;  /* Added margin-top to push it down */
+    padding: calc(var(--index) * 10) 0;
+    margin-top: 40vh;
     position: relative;
     z-index: 1;
 }
@@ -97,31 +97,270 @@ body {
 .about-me__content {
     display: flex;
     align-items: center;
-    gap: 4rem;
-    max-width: 1200px;
+    gap: calc(var(--index) * 6);
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
-}
-
-.about-me__image {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
+    padding-left: 0;
 }
 
 .about-me__text {
     flex: 1;
+    max-width: 800px;
 }
 
 .about-me__title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #fff;
+    font-size: calc(var(--index) * 2.5);
+    color: var(--color-header);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid rgba(255, 0, 0, 0.7);
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+}
+
+.about-me__title::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 2px solid rgba(255, 0, 0, 0.7);
+    border-radius: 12px;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-me__title:hover::after {
+    inset: -6px;
+    opacity: 0.3;
+}
+
+.about-me__subtitle {
+    font-size: calc(var(--index) * 1.2);
+    color: var(--color-header);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
 }
 
 .about-me__description {
-    font-size: 1.2rem;
+    font-size: calc(var(--index) * 0.9);
     line-height: 1.6;
-    color: #fff;
+    color: var(--color-text);
+    max-width: 100%;
+}
+
+.image-wrapper {
+    flex: 0 0 auto;
+    position: relative;
+    margin-left: -2rem;
+}
+
+.image-container {
+    position: relative;
+    width: calc(var(--index) * 19);
+    height: calc(var(--index) * 19);
+}
+
+.about-me__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    position: relative;
+    z-index: 3;
+}
+
+.decorative-square {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.decorative-square.red {
+    background-color: rgba(255, 0, 0, 0.7);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform: translate(-20px, -20px);
+}
+
+.decorative-square.light {
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform: translate(20px, 20px);
+}
+
+.image-container:hover .decorative-square.red {
+    transform: translate(-30px, -30px);
+}
+
+.image-container:hover .decorative-square.light {
+    transform: translate(30px, 30px);
+}
+
+.about-me__title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tagline {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+}
+
+.tagline__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tagline__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.tagline__part-1 {
+    font-size: calc(var(--index) * 3);
+    color: var(--color-header);
+    line-height: 1;
+    font-weight: 300;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tagline__part-2 {
+    font-family: 'Playfair Display', serif;
+    font-size: calc(var(--index) * 3.2);
+    color: rgba(255, 0, 0, 0.7);
+    line-height: 1.2;
+    font-style: italic;
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: blur(10px);
+}
+
+.tagline__part-1.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tagline__part-2.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+}
+
+.stamp-container {
+    position: relative;
+    width: 100%;
+    height: calc(var(--index) * 5);
+    margin-top: 2rem;
+}
+
+.stamp-hand {
+    position: absolute;
+    right: -100%;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    height: calc(var(--index) * 8);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+.stamp-hand.visible {
+    opacity: 1;
+    right: 50%;
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.stamp-hand.stamped {
+    right: 150%;
+    transform: translateY(-50%) rotate(-45deg);
+    transition-delay: 0.2s;
+}
+
+@keyframes stampImpact {
+    0% {
+        transform: translateY(-50%) scale(1.2);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    20% {
+        transform: translateY(-50%) scale(0.9);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.ink-blot {
+    position: absolute;
+    width: calc(var(--index) * 25);
+    height: calc(var(--index) * 25);
+    background: rgba(255, 0, 0, 0.15);
+    border-radius: 50%;
+    filter: blur(calc(var(--index) * 3));
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+.ink-blot::before {
+    content: '';
+    position: absolute;
+    inset: 20%;
+    background: rgba(255, 0, 0, 0.2);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    filter: blur(calc(var(--index) * 2));
+}
+
+.ink-blot--top-left {
+    top: -30%;
+    left: -20%;
+    transform: rotate(-45deg) scale(0.8);
+}
+
+.ink-blot--bottom-right {
+    bottom: -30%;
+    right: -20%;
+    transform: rotate(135deg) scale(0.8);
+}
+
+.ink-blot.visible {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+.ink-blot--top-left.visible {
+    transform: rotate(-15deg) scale(1);
+}
+
+.ink-blot--bottom-right.visible {
+    transform: rotate(165deg) scale(1);
 }

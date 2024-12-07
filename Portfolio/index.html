@@ -12,6 +12,10 @@
 	<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
 	<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="index.css">
 	<script src="app.js" defer></script>
 
@@ -29,14 +33,33 @@
 					</div>
 				</div>
 			</header>
+
+			<section class="tagline">
+				<div class="ink-blot ink-blot--top-left"></div>
+				<div class="ink-blot ink-blot--bottom-right"></div>
+				<div class="container">
+					<div class="tagline__content">
+						<h2 class="tagline__text">
+							<span data-speed=".8" class="tagline__part-1">Where creativity meets strategy</span>
+							<span data-speed=".9" class="tagline__part-2">and ideas transform into impact</span>
+						</h2>
+					</div>
+				</div>
+			</section>
 		
 			<section class="about-me">
 				<div class="container">
 					<div class="about-me__content">
-						<img data-speed=".8" class="about-me__image" src="img/your-photo.jpg" alt="Your Photo">
+						<div class="image-wrapper">
+							<div class="image-container">
+								<div class="decorative-square red"></div>
+								<div class="decorative-square light"></div>
+								<img data-speed=".8" class="about-me__image" src="img/your-photo.jpg" alt="Anastasiya Korsak">
+							</div>
+						</div>
 						<div data-speed=".85" class="about-me__text">
-							<h2 class="about-me__title animate-on-scroll">Anastasiya Korsak</h2>
-							<p class="about-me__description">Add your personal information here. Tell something about yourself, your skills, and your interests.</p>
+							<h2 class="about-me__title">Anastasiya Korsak</h2>
+							<p class="about-me__description">A creative professional specializing in interactive media, I focus on developing cutting-edge digital experiences that blend storytelling and technology. My work explores the intersection of innovation and design, turning concepts into captivating and immersive platforms. Always striving to push creative and technological boundaries, I'm passionate about crafting experiences that leave a lasting impact.</p>
 						</div>
 					</div>
 				</div>
