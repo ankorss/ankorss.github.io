@@ -215,14 +215,14 @@ const photos = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    const sliderImage = document.querySelector('.slider-image');
-    const prevBtn = document.querySelector('.slider-btn.prev');
-    const nextBtn = document.querySelector('.slider-btn.next');
+    const photoElement = document.querySelector('.about-me__image');
+    const prevBtn = document.querySelector('.nav-btn.prev');
+    const nextBtn = document.querySelector('.nav-btn.next');
     let currentIndex = 0;
 
     // Функция для смены фотографии
     function changeImage(direction) {
-        sliderImage.style.opacity = '0';
+        photoElement.style.opacity = '0';
         
         setTimeout(() => {
             if (direction === 'next') {
@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 currentIndex = (currentIndex - 1 + photos.length) % photos.length;
             }
-            sliderImage.src = photos[currentIndex];
-            sliderImage.style.opacity = '1';
+            photoElement.src = photos[currentIndex];
+            photoElement.style.opacity = '1';
         }, 300);
     }
 
