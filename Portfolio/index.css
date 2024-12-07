@@ -755,9 +755,9 @@ body {
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: calc(-50vw - 5cm);
-    margin-right: calc(-50vw - 5cm);
-    width: calc(100vw + 10cm);
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
 }
 
 .footer-content {
@@ -771,7 +771,7 @@ body {
 
 .social-links {
     display: flex;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -780,22 +780,19 @@ body {
 .social-link {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px 25px;
-    border: 2px solid #FFFFFF;
-    border-radius: 30px;
-    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    transition: all 0.2s ease;
     background-color: transparent;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .social-link:hover {
-    background-color: #FFFFFF;
-    color: #990000;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #FFFFFF;
 }
 .ink-blot {
     position: absolute;
