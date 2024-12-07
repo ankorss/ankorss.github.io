@@ -168,6 +168,26 @@ if (ScrollTrigger.isTouch !== 1) {
 		portfolioObserver.observe(portfolioTitleAccent)
 	}
 
+	// Portfolio animations
+	const portfolioSection = document.querySelector('.portfolio')
+	const portfolioBlots = portfolioSection.querySelectorAll('.ink-blot')
+	const portfolioObserver2 = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				portfolioBlots.forEach(blot => {
+					blot.classList.add('visible')
+				})
+				portfolioTitleAccent.classList.add('visible')
+			}
+		})
+	}, {
+		threshold: 0.5
+	})
+
+	if (portfolioSection) {
+		portfolioObserver2.observe(portfolioSection)
+	}
+
 }
 
 window.addEventListener('scroll', e => {
