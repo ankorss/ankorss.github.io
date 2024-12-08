@@ -219,6 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.prev-gallery');
     const nextBtn = document.querySelector('.next-gallery');
     let currentIndex = 0;
+    let autoSlideInterval;
 
     // Функция для смены фотографии
     function changeImage(direction) {
@@ -243,5 +244,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Автоматическое переключение каждые 5 секунд
-    setInterval(() => changeImage('next'), 5000);
+    autoSlideInterval = setInterval(() => changeImage('next'), 5000);
+
+    // Отключаем автопереключение для мобильных устройств
+    if (window.innerWidth <= 768) {
+        // Удаляем автоматическое переключение
+        clearInterval(autoSlideInterval);
+    }
 });
