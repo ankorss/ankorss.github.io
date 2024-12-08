@@ -2,19 +2,19 @@ Project Description
 
 Project Name: INTERACTIVE MEDIA Portfolio
 
-This project is my first IM portfolio, designed to showcase my skills in interactive media. My goal was to create a digital space that not only presents my work but also reflects my approach to design and technology. I wanted the portfolio to feel modern, interactive, and easy to navigate, offering a seamless user experience. By blending storytelling with design, I aimed to create a space that would captivate potential employers and collaborators, giving them a clear sense of my capabilities and passion for interactive media industries.
+This project is my first IM portfolio, designed to showcase my skills in interactive media. The goal was to develop a digital space that not only presents my work but also reflects my design and technological approach. I wanted the portfolio to feel modern, interactive, and intuitive, offering a seamless user experience. By blending storytelling with design, I aimed to create a platform that would captivate potential employers and collaborators, giving them a clear understanding of my capabilities and passion for the interactive media industry.
 
 Process
 
 To bring this idea to life, I followed these steps:
 
-Planning: I started by defining the purpose of the portfolio and how I wanted it to represent my work. I wanted it to highlight my projects in interactive media while keeping the site simple and functional. The structure includes sections like an About Me page, Project Gallery, and Contact info.
+Planning: I started by defining the purpose of the portfolio and how I wanted it to represent my work. It was important to highlight my projects in interactive media while keeping the structure simple and user-friendly. The site includes essential sections such as About Me, Project Gallery, and Contact Info. Each section was designed to be intuitive and easily navigable.
 
-Design: I focused on creating a clean and modern design, with attention to detail. I worked on wireframes first and then designed the interface with a focus on clarity and user engagement. I wanted the design to reflect my personal style while also showcasing my ability to design for functionality.
+Design:  I focused on creating a clean, modern design with strong attention to detail. I began with wireframes to plan out the layout and flow of the site. Then, I refined the interface with a focus on clarity and user engagement. Dark theme of the website doesn't put too much pressure on the eyes of the website visitor but bright red accents make it still look iteresting at the same sime. I wanted the design to reflect my personal style while showcasing my ability to design with both aesthetics and functionality in mind. 
 
 Development: : Once the design was ready, I dove into development. I used HTML, CSS, JavaScript to make the portfolio both visually appealing and fully functional.The interactive elements—like hover effects, smooth scrolls were crucial for making the experience feel fluid and seamless. I truly enjoyed experimenting with these features, testing how they could elevate the overall experience and add something special to the site.
 
-Testing: After putting everything together, I focused on testing. I ran the portfolio through browsers to ensure everything worked as intended. I also paid close attention to the user experience, making sure it was easy to navigate, visually engaging, and didn’t overwhelm the visitor. I wanted the site to be as fast as possible, so I optimized images and code to reduce load times.
+Testing: After putting everything together, I focused on comprehensive testing. I checked the portfolio across different browsers to ensure compatibility and functionality. User experience was my top priority, so I paid careful attention to the site’s navigation and visual appeal, ensuring it was easy to explore without being overwhelming. Additionally, I optimized images and code to ensure fast load times and a smooth performance.
 
 Reflection/Evaluation
 
