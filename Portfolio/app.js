@@ -207,11 +207,12 @@ ScrollSmoother.create({
 	content: '.content'
 })
 
-// Карусель фотографий
+
 document.addEventListener('DOMContentLoaded', function() {
     const photoElement = document.querySelector('.about-me__image');
     const prevBtn = document.querySelector('.prev-gallery');
-    const nextBtn = document.querySelector('.next-gallery');
+    const 
+	nextBtn = document.querySelector('.next-gallery');
     let currentIndex = 0;
     let autoSlideInterval;
 
@@ -221,7 +222,6 @@ document.addEventListener('DOMContentLoaded', function() {
         'img/myphoto3.jpg'
     ];
 
-    // Функция для смены фотографии
     function changeImage(direction) {
         photoElement.style.opacity = '0';
         
@@ -237,15 +237,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     }
 
-    // Обработчики для кнопок
+   
     if (prevBtn && nextBtn) {
         prevBtn.addEventListener('click', () => changeImage('prev'));
         nextBtn.addEventListener('click', () => changeImage('next'));
     }
 
-    // Отключаем автопереключение для мобильных устройств
     if (window.innerWidth > 768) {
-        // Автоматическое переключение каждые 5 секунд
+    
         autoSlideInterval = setInterval(() => changeImage('next'), 5000);
     }
 });
