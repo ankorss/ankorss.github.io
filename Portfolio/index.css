@@ -1387,3 +1387,24 @@ html, body {
 .portfolio__title {
     position: relative;
 }
+
+@media screen and (max-width: 768px) {
+    .hero {
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(var(--index) * 25);
+        top: 15vh;
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-title {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+}
