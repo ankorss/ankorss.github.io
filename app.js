@@ -233,3 +233,18 @@ document.addEventListener('DOMContentLoaded', function() {
         autoSlideInterval = setInterval(changeImage, 5000);
     }
 });
+
+// Triggering underline animation on page load for the word 'Portfolio'
+window.addEventListener('load', () => {
+    const titleAccent = document.querySelector('.main-title .title-accent');
+    if (titleAccent) {
+        titleAccent.classList.add('animate-underline');
+    }
+});
+
+window.addEventListener('load', () => {
+    const titleAccent = document.querySelector('.main-title .title-accent');
+    if (titleAccent) {
+        titleAccent.classList.add('animate-underline');
+    }
+});

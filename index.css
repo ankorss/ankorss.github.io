@@ -1121,6 +1121,10 @@ main {
     background-color: rgba(255, 0, 0, 1);
 }
 
+.animate-underline::after {
+    animation: underline 1s forwards;
+}
+
 html, body {
     overflow-x: hidden;
     width: 100%;
@@ -1331,4 +1335,25 @@ html, body {
 
 span.tagline__part-2 {
     white-space: nowrap;
+}
+
+@keyframes underline {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.portfolio__title-accent {
+    position: relative;
+    display: inline-block;
+}
+
+.portfolio__title-accent::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    animation: underline 1s forwards;
 }
