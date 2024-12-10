@@ -1200,6 +1200,30 @@ span.tagline__part-2 {
         align-items: center;
         gap: 20px;
     }
+
+    .contact-title {
+        font-family: 'Playfair Display', serif;
+        font-size: calc(var(--index) * 1.35);
+        color: rgba(255, 0, 0, 0.7);
+        line-height: 1.2;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-text {
+        font-family: 'Playfair Display', serif;
+        font-size: calc(var(--index) * 0.9);
+        color: #FFFFFF;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .gallery__item {
+        width: 95%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (max-width: 768px) {
