@@ -466,24 +466,12 @@ body {
 }
 
 .ink-blot--top-left {
-    top: -25%;
-    left: -15%;
-    animation: floatBlot1 25s ease-in-out infinite;
-}
-
-.ink-blot--bottom-right {
-    top: 25%;
-    right: -15%;
-    animation: floatBlot2 30s ease-in-out infinite;
-}
-
-.portfolio__title-wrapper .ink-blot--top-left {
     top: -50%;
     left: -30%;
     transform: scale(0.9);
 }
 
-.portfolio__title-wrapper .ink-blot--bottom-right {
+.ink-blot--bottom-right {
     bottom: -50%;
     right: -30%;
     transform: scale(0.9);
