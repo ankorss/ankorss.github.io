@@ -1357,3 +1357,32 @@ span.tagline__part-2 {
     background-color: #fff;
     animation: underline 1s forwards;
 }
+
+@media only screen and (max-width: 768px) {
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        padding-top: 20px;
+    }
+
+    .hero {
+        width: 66.67%; /* 1.5 times smaller */
+        max-width: none;
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .main-header {
+        position: static;
+        text-align: center;
+        width: 100%;
+    }
+
+    .main-title {
+        display: block;
+        text-align: center;
+    }
+}
