@@ -1188,7 +1188,7 @@ span.tagline__part-2 {
     .main-title {
         display: block;
         text-align: center;
-        font-size: calc(var(--index) * 3);
+        font-size: calc(var(--index) * 2.5);
         margin: 0 auto;
     }
 }
