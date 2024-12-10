@@ -1267,3 +1267,44 @@ span.tagline__part-2 {
         gap: 10px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .hero {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .main-title {
+        text-align: center;
+        font-size: calc(var(--index) * 2.5);
+        margin: 20px auto;
+    }
+
+    .gallery__item {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .cv-button {
+        display: block;
+        margin: 20px auto;
+        padding: 15px 30px;
+        background-color: #990000;
+        color: #fff;
+        text-align: center;
+        border-radius: 25px;
+        text-decoration: none;
+    }
+
+    .portfolio__title-wrapper {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .portfolio__title {
+        display: block;
+        margin: 0 auto;
+    }
+}
