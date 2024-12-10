@@ -453,7 +453,7 @@ body {
 
 .interactive-text, .media-text {
     font-family: outfit-c;
-    font-size: calc(var(--index) * 6.8);
+    font-size: calc(var(--index) * 6.5);
     display: block;
     line-height: 1;
     font-weight: 300;
@@ -1076,7 +1076,7 @@ main {
 }
 
 .interactive-text, .media-text {
-    font-size: calc(var(--index) * 6.8);
+    font-size: calc(var(--index) * 6.5);
 }
 
 .animated-underline {
