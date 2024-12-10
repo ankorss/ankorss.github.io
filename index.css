@@ -1409,3 +1409,25 @@ span.tagline__part-2 {
         gap: 20px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .about-me__text-section {
+        text-align: center;
+        padding: 0 5vw;
+    }
+
+    .about-me__description {
+        margin: 0 auto;
+    }
+
+    .about-me__photo {
+        width: 50%; /* Reduce hero image size to half */
+        margin: 0 auto 20px;
+    }
+
+    .main-title {
+        font-size: calc(var(--index) * 3);
+        margin: 0 auto;
+        text-align: center;
+    }
+}
