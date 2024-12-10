@@ -1383,10 +1383,8 @@ span.tagline__part-2 {
     }
 
     .hero {
-        width: 66.67%; /* 1.5 times smaller */
-        max-width: none;
-        position: static;
-        margin-bottom: 20px;
+        width: 50%; /* Reduce hero image size to half */
+        margin: 0 auto 20px;
     }
 
     .main-header {
@@ -1398,6 +1396,8 @@ span.tagline__part-2 {
     .main-title {
         display: block;
         text-align: center;
+        font-size: calc(var(--index) * 3);
+        margin: 0 auto;
     }
 }
 
@@ -1418,6 +1418,7 @@ span.tagline__part-2 {
 
     .about-me__description {
         margin: 0 auto;
+        font-size: calc(var(--index) * 1.2);
     }
 
     .about-me__photo {
@@ -1441,7 +1442,7 @@ span.tagline__part-2 {
     }
 
     .gallery__item {
-        width: 80%;
+        width: 90%; /* Slightly increase width for images */
         margin: 0 auto;
     }
 
