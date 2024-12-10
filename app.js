@@ -7,7 +7,7 @@ if (ScrollTrigger.isTouch !== 1) {
     ScrollSmoother.create({
         wrapper: '.wrapper',
         content: '.content',
-        smooth: 1.5,
+        smooth: 2.5,  // Increase smoothness for better scrolling experience
         effects: true
     });
 
