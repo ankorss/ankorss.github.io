@@ -1431,3 +1431,27 @@ span.tagline__part-2 {
         text-align: center;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .gallery__item {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .text-block {
+        text-align: center;
+        padding: 0 5vw;
+    }
+
+    .learn-more-btn {
+        display: block;
+        margin: 10px auto;
+    }
+}
