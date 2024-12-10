@@ -4,9 +4,7 @@ Project Name: INTERACTIVE MEDIA Portfolio
 
 This project is my first IM portfolio, designed to showcase my skills in interactive media. The goal was to develop a digital space that not only presents my work but also reflects my design and technological approach. I wanted the portfolio to feel modern, interactive, and intuitive, offering a seamless user experience. By blending storytelling with design, I aimed to create a platform that would captivate potential employers and collaborators, giving them a clear understanding of my capabilities and passion for the interactive media industry.
 
-Process
-
-To bring this idea to life, I followed these steps:
+Process: To bring this idea to life, I followed these steps:
 
 Planning: I started by defining the purpose of the portfolio and how I wanted it to represent my work. It was important to highlight my projects in interactive media while keeping the structure simple and user-friendly. The site includes essential sections such as About Me, Project Gallery, and Contact Info. Each section was designed to be intuitive and easily navigable.
 
